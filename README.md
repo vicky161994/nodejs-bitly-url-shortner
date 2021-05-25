@@ -2,6 +2,8 @@
 
 This repository is created for generating short url for a long url using nodejs and bitly. If we are sharing some link through our application using Email or SMS, we should share short url insted of really long url.
 
+![url-short](https://user-images.githubusercontent.com/47051446/119441282-82367e80-bd43-11eb-9c97-28ba5f120020.png)
+
 ## How to run this repo
 
 * Get clone of this repo
