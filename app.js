@@ -27,19 +27,10 @@ app.post("/", async (req, res) => {
     var dataString = `{ "long_url": "${req.body.url}"}`;
 
     const api_url = "https://api-ssl.bitly.com/v4/shorten";
-    var options = {
-      url: api_url,
-      method: "POST",
+    const response = await axios.post(api_url, dataString, {
       headers: headers,
-      body: dataString,
-    };
-
-    request(options, (error, body) => {
-      if (error) {
-        return res.status(404).send(error);
-      }
-      return res.render("index", { error: "", data: JSON.parse(body.body) });
     });
+    return res.render("index", { error: "", data: response.data });
   } catch (error) {
     console.log(error);
     return res.status(404).send(error);
